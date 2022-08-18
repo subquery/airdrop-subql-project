@@ -36,20 +36,6 @@ dataSources:
     processor:
       <<: *frontier-processor
       options:
-        abi: eraManager
-        address: '0xD9d0EB30589A50642F3200E3f41C462B63369364'
-    mapping:
-      file: ./dist/index.js
-      handlers:
-        - handler: handleNewEra
-          kind: substrate/AcalaEvmEvent
-          filter:
-            topics:
-              - NewEraStart(uint256 indexed era, address caller)
-  - <<: *frontier
-    processor:
-      <<: *frontier-processor
-      options:
         abi: airdropper
         address: '0x32Bd2f73286F6329B1Cf4D5Abf41608D829be867'
     mapping:

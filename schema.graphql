@@ -1,12 +1,3 @@
-type Era @entity {
-  id: ID! # Era id
-  startTime: Date! # Block timestamp the Era is started
-  endTime: Date # Block timestamp that the successive Era is started
-  forceNext: Boolean # True when force save previous Era
-  createAt: String #topicHandler:block:Txhash
-  updateAt: String #topicHandler:block:Txhash
-}
-
 type Airdrop @entity {
   id: ID! # Round ID
   tokenAddress: String!
