@@ -20,11 +20,12 @@ export const getErrorText = (handler: string, error: string) => {
 };
 
 export const recordException = async (
-  txInfo: string, // getUpsertAt
+  handler: string,
+  event: FrontierEvmEvent,
   error: string
 ): Promise<void> => {
   const exception = Exception.create({
-    id: txInfo,
+    id: getUpsertAt(handler, event),
     error,
   });
 

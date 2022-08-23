@@ -10,12 +10,7 @@ import {
 } from '@subql/contract-sdk/typechain/Airdropper';
 import assert from 'assert';
 import { Airdrop, AirdropClaimStatus, AirdropUser } from '../types';
-import {
-  getErrorText,
-  getUpsertAt,
-  recordException,
-  upsertUser,
-} from './utils';
+import { getUpsertAt, recordException, upsertUser } from './utils';
 
 const getAirdropUserId = (roundId: string, address: string) =>
   `${roundId}:${address}`;
@@ -56,12 +51,8 @@ export async function handleRoundSettled(
     airdrop.hasWithdrawn = true;
     airdrop.updateAt = getUpsertAt(HANDLER, event);
   } else {
-    const error = getErrorText(
-      HANDLER,
-      `Expect roundId - ${roundIdString} exit`
-    );
-  
-    await recordException(event.transactionHash ?? 'N/A', error);
+    const error = `Expect roundId - ${roundIdString} exit`;
+    await recordException(HANDLER, event, error);
     logger.error(error);
   }
 }
@@ -91,11 +82,8 @@ export async function handleAddAirdrop(
 
     await airdropUser.save();
   } else {
-    const error = getErrorText(
-      HANDLER,
-      `Expect roundId - ${roundIdString} exit`
-    );
-    await recordException(event.transactionHash ?? 'N/A', error);
+    const error = `Expect roundId - ${roundIdString} exit`;
+    await recordException(HANDLER, event, error);
     logger.error(error);
   }
 }
@@ -114,21 +102,15 @@ export async function handleAirdropClaimed(
   const airdropUser = await AirdropUser.get(airdropUserId);
 
   if (!airdrop) {
-    const error = getErrorText(
-      HANDLER,
-      `Expect roundId - ${roundIdString} exit`
-    );
-    await recordException(event.transactionHash ?? 'N/A', error);
+    const error = `Expect roundId - ${roundIdString} exit`;
+    await recordException(HANDLER, event, error);
     logger.error(error);
     return;
   }
 
   if (!airdropUser) {
-    const error = getErrorText(
-      HANDLER,
-      `Expect airdropUser - ${airdropUserId} exit`
-    );
-    await recordException(event.transactionHash ?? 'N/A', error);
+    const error = `Expect airdropUser - ${airdropUserId} exit`;
+    await recordException(HANDLER, event, error);
     logger.error(error);
     return;
   }
