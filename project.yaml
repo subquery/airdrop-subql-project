@@ -4,10 +4,10 @@ version: 1.0.0
 runner:
   node:
     name: '@subql/node'
-    version: '>=1.5.0'
+    version: '>=1.1.0'
   query:
     name: '@subql/query'
-    version: '>=1.5.0'
+    version: '>=1.1.0'
 description: 'Query registry project for SubQuery Testnet'
 repository: ''
 schema:
@@ -22,7 +22,7 @@ network:
 
 x-frontier: &frontier
   kind: substrate/FrontierEvm
-  startBlock: 2701490
+  startBlock: 2701125
   processor: &frontier-processor
     file: './dist/frontierEvm.js'
   assets:

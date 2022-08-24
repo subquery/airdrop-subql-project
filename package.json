@@ -9,7 +9,6 @@
     "publish": "subql publish",
     "validate": "subql validate",
     "lint": "eslint . --ext .ts",
-    "postinstall": "sh ./scripts/postinstall.sh",
     "check-filters": "node -r ts-node/register/transpile-only ./scripts/checkFilters.ts"
   },
   "homepage": "https://github.com/subquery/tutorials-frontier-evm-starter",
@@ -48,8 +47,7 @@
   "resolutions": {
     "class-transformer": "0.4.0",
     "ipfs-unixfs": "6.0.6",
-    "@polkadot/util": "10.1.5",
-    "@ethersproject/base64": "5.7.0"
+    "@polkadot/util": "10.1.5"
   },
   "exports": {
     "frontierEvm": "./node_modules/@subql/frontier-evm-processor/dist/index.js",
