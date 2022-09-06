@@ -1706,10 +1706,10 @@
     reflect-metadata "^0.1.13"
     semver "^7.3.5"
 
-"@subql/contract-sdk@0.10.2-8":
-  version "0.10.2-8"
-  resolved "https://registry.yarnpkg.com/@subql/contract-sdk/-/contract-sdk-0.10.2-8.tgz#9f93619090d1dc1dea5387d8d1b1afc6cf08b39e"
-  integrity sha512-HBYT3+jEkrtOZcHjCPiPhb3ukOV7tzemT/IVEvLLdRMgRhFy/mk+aED0kPodUCR6RzRHbHrhnszRiEIuWezxdg==
+"@subql/contract-sdk@0.10.2-22":
+  version "0.10.2-22"
+  resolved "https://registry.yarnpkg.com/@subql/contract-sdk/-/contract-sdk-0.10.2-22.tgz#786af9acd1910ecd65c919055ba9c89d7684189e"
+  integrity sha512-aL00pHc+QSmoS9l2bL52dSomL/7E7UMsD+LIpvRWSJ3Fh3UGwkAVlU/HFtbtgcHQgPArH6WdMKRsCqD7bC/gBQ==
   dependencies:
     "@openzeppelin/contracts-upgradeable" "^4.5.2"
     "@polkadot/ui-keyring" "^2.9.4"
